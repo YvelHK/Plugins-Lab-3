@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour
 
         // Otherwise, move perpendicular to facing direction (which in combination with rotating will move in a circle)
         else
-            transform.Translate(0.05f, 0, 0);
+        {
+            transform.Translate(0.5f / Vector2.Distance(player.transform.position, transform.position), 0, 0);
+        }
     }
 }
